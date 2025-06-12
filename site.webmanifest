@@ -1,0 +1,26 @@
+{
+  "name": "SPQR - Clan Italiano Anvil Empires",
+  "short_name": "SPQR",
+  "description": "Clan italiano di Anvil Empires focalizzato sulla community e il gameplay cooperativo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#d4af37",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "it",
+  "categories": ["games", "social"],
+  "icons": [
+    {
+      "src": "./images/logo-anvil-italia-sfondo-removebg-preview.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./apple-touch-icon.png", 
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
