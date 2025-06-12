@@ -2,9 +2,21 @@
 <html lang="it" itemscope itemtype="http://schema.org/SportsOrganization">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <meta http-equiv="content-language" content="it-IT">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    
+    <!-- Mobile Optimizations -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://discord.gg">
+    <link rel="preload" href="./images/logo-anvil-italia-sfondo-removebg-preview.png" as="image">
     
     <!-- Meta Tags SEO Avanzati -->
     <title>SPQR - Clan Italiano Anvil Empires | Community Gaming ITA</title>
@@ -13,14 +25,15 @@
     <meta name="author" content="SPQR - Clan Anvil Empires Italia">
     
     <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="NNht4l06euPmsSAJGmPBaZ-ZF1zEQwr5FgCb6RY0zk0" />
-	<link rel="stylesheet" href="./style.css">
+    <meta name="google-site-verification" content="your-google-verification-code" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://anvilempiresitalia.github.io" />
     
-    <!-- Favicon e Manifest -->
+    <!-- Favicon e Manifest ottimizzati -->
     <link rel="icon" href="./logo-anvil-italia-sfondo-removebg-preview.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192x192.png">
     <link rel="apple-touch-icon" href="./apple-touch-icon.png">
     <link rel="manifest" href="./site.webmanifest">
     
@@ -45,7 +58,10 @@
     <meta name="twitter:image" content="https://anvilempiresitalia.github.io/images/spqr-anvil-empires-clan.jpg">
     <meta name="twitter:site" content="@SPQR_AnvilEmpires">
     
-    <!-- Structured Data Avanzato -->
+    <!-- CSS Inline per performance su mobile -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -129,75 +145,79 @@
       ]
     }
     </script>
-
-
 </head>
 <body>
+    <!-- NoScript Fallback -->
+    <noscript>
+        <style>
+            #particles { display: none; }
+            .fade-in { opacity: 1 !important; transform: none !important; }
+        </style>
+    </noscript>
+
     <!-- Particelle animate -->
     <div id="particles"></div>
 
-    <!-- Discord Widget -->
-    <div class="discord-widget" onclick="joinDiscord()">
+    <!-- Discord Widget Flottante -->
+    <div class="discord-widget" onclick="joinDiscord(event)" aria-label="Apri Discord">
         <div class="notification-badge">!</div>
     </div>
 
-<!-- Navigazione sempre visibile -->
-<nav id="navbar">
-    <div class="nav-container">
-        <a href="#home" class="nav-logo" aria-label="SPQR Clan Anvil Empires - Home">
-            <div class="logo-emblem">
-                <!-- AGGIUNGI L'IMMAGINE QUI -->
-                <img src="./images/logo-anvil-italia-sfondo-removebg-preview.png" alt="Logo SPQR Anvil Italia" class="logo-image">
-            </div>
-            <div class="logo-text">
-                <div class="logo-title">SPQR - Anvil Empires Italia</div>
-                <div class="logo-subtitle">Senatus Populusque Romanus</div>
-            </div>
-        </a>
-        
-        <div class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu mobile">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- Navigazione sempre visibile -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" aria-label="SPQR Clan Anvil Empires - Home">
+                <div class="logo-emblem">
+                    <img src="./images/logo-anvil-italia-sfondo-removebg-preview.png" alt="Logo SPQR Anvil Italia" class="logo-image">
+                </div>
+                <div class="logo-text">
+                    <div class="logo-title">SPQR - Anvil Empires Italia</div>
+                    <div class="logo-subtitle">Senatus Populusque Romanus</div>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu mobile" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul id="nav-menu">
+                <li><a href="#about">Chi Siamo</a></li>
+                <li><a href="#activities">Attività</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="javascript:void(0)" onclick="joinDiscord(event); return false;" class="nav-discord">Discord</a></li>
+            </ul>
         </div>
-        
-        <ul id="nav-menu">
-            <li><a href="#about">Chi Siamo</a></li>
-            <li><a href="#activities">Attività</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="javascript:void(0)" onclick="joinDiscord(); return false;" class="nav-discord">Discord</a></li>
-        </ul>
-    </div>
-</nav>
+    </nav>
 
-<!-- Header Hero -->
-<header id="home">
-    <div class="hero-content">
-        <div class="clan-emblem" aria-label="Emblema Clan SPQR">
-            <!-- AGGIUNGI L'IMMAGINE QUI -->
-            <img src="./images/logo-anvil-italia-sfondo-removebg-preview.png" alt="Emblema SPQR Anvil Italia" class="clan-emblem-image">
-        </div>
-        <h1 id="main-title">SPQR</h1>
-        <p class="subtitle">Senatus Populusque Romanus</p>
-        <p class="subtitle-anvil">🏛️ Clan italiano di Anvil Empires - Community, cooperazione, divertimento</p>
+    <!-- Header Hero -->
+    <header id="home">
+        <div class="hero-content">
+            <div class="clan-emblem" aria-label="Emblema Clan SPQR">
+                <img src="./images/logo-anvil-italia-sfondo-removebg-preview.png" alt="Emblema SPQR Anvil Italia" class="clan-emblem-image">
+            </div>
+            <h1 id="main-title">SPQR</h1>
+            <p class="subtitle">Senatus Populusque Romanus</p>
+            <p class="subtitle-anvil">🏛️ Clan italiano di Anvil Empires - Community, cooperazione, divertimento</p>
             
             <!-- Roadmap Anvil Empires -->
             <div class="launch-roadmap">
-                <div class="roadmap-item active">
+                <div class="roadmap-item active" data-step="1">
                     <div class="roadmap-icon">✅</div>
                     <div class="roadmap-content">
                         <h4>Discord Community</h4>
                         <p>Server Discord organizzato e attivo</p>
                     </div>
                 </div>
-                <div class="roadmap-item active">
+                <div class="roadmap-item active" data-step="2">
                     <div class="roadmap-icon">✅</div>
                     <div class="roadmap-content">
                         <h4>Membri Fondatori</h4>
                         <p>Gruppo iniziale di giocatori italiani</p>
                     </div>
                 </div>
-                <div class="roadmap-item active">
+                <div class="roadmap-item active" data-step="3">
                     <div class="roadmap-icon">⏳</div>
                     <div class="roadmap-content">
                         <h4>Preparazione Lancio</h4>
@@ -206,8 +226,8 @@
                 </div>
             </div>
             
-            <button class="discord-widget" onclick="joinDiscord()">Entra in SPQR</button>
-            <a href="javascript:void(0)" onclick="joinDiscord(); return false;" class="discord-emphasis">
+            <button class="discord-widget" onclick="joinDiscord(event)" aria-label="Entra nel Discord SPQR">Entra in SPQR</button>
+            <a href="javascript:void(0)" onclick="joinDiscord(event); return false;" class="discord-emphasis">
                 Unisciti al Discord Anvil Empires italiano
             </a>
             
@@ -218,22 +238,22 @@
         </div>
     </header>
 
-<!-- Chi Siamo --> 
-<section id="about" class="fade-in">
-    <h2 class="section-title">Chi Siamo</h2>
-    <div class="about-content">
-        <div class="about-text">
-            <p><strong>SPQR</strong> è un <strong>clan italiano di Anvil Empires</strong> nato dalla passione condivisa per i giochi di strategia e costruzione. Siamo un gruppo di giocatori italiani che crede nell'importanza della community e del gameplay cooperativo.</p>
-            <p>La nostra <strong>community italiana</strong> si sta preparando insieme per l'uscita di Anvil Empires, organizzando discussioni, condividendo informazioni e pianificando il nostro approccio al gioco. Il nostro <strong>Discord</strong> è un ambiente accogliente dove tutti possono contribuire e imparare.</p>
-            <p>Cerchi un <strong>clan italiano</strong> con cui giocare ad Anvil Empires? SPQR offre un ambiente amichevole e organizzato per giocatori di tutti i livelli. Che tu sia un veterano dei giochi di strategia o un principiante curioso, c'è posto per te nella nostra community.</p>
-            <p>Attualmente siamo un gruppo in crescita di appassionati italiani. I nostri membri hanno esperienze diverse nei giochi di strategia, e insieme stiamo costruendo una community solida e inclusiva per affrontare le sfide di <strong>Anvil Empires</strong>.</p>
-            <p>🏛️ <em>Insieme verso nuove avventure in Anvil Empires!</em></p>
+    <!-- Chi Siamo --> 
+    <section id="about" class="fade-in">
+        <h2 class="section-title">Chi Siamo</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p><strong>SPQR</strong> è un <strong>clan italiano di Anvil Empires</strong> nato dalla passione condivisa per i giochi di strategia e costruzione. Siamo un gruppo di giocatori italiani che crede nell'importanza della community e del gameplay cooperativo.</p>
+                <p>La nostra <strong>community italiana</strong> si sta preparando insieme per l'uscita di Anvil Empires, organizzando discussioni, condividendo informazioni e pianificando il nostro approccio al gioco. Il nostro <strong>Discord</strong> è un ambiente accogliente dove tutti possono contribuire e imparare.</p>
+                <p>Cerchi un <strong>clan italiano</strong> con cui giocare ad Anvil Empires? SPQR offre un ambiente amichevole e organizzato per giocatori di tutti i livelli. Che tu sia un veterano dei giochi di strategia o un principiante curioso, c'è posto per te nella nostra community.</p>
+                <p>Attualmente siamo un gruppo in crescita di appassionati italiani. I nostri membri hanno esperienze diverse nei giochi di strategia, e insieme stiamo costruendo una community solida e inclusiva per affrontare le sfide di <strong>Anvil Empires</strong>.</p>
+                <p>🏛️ <em>Insieme verso nuove avventure in Anvil Empires!</em></p>
+            </div>
+            <div class="about-image" aria-label="Immagine rappresentativa del clan SPQR">
+                <img src="./images/image5.jpg" alt="Logo SPQR Anvil Empire Italia" loading="lazy">
+            </div>
         </div>
-        <div class="about-image" aria-label="Immagine rappresentativa del clan SPQR">
-            <img src="./images/image5.jpg" alt="Logo SPQR Anvil Empire Italia">
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Attività del Clan -->
     <section id="activities" class="fade-in">
@@ -275,7 +295,7 @@
                 </div>
                 <div class="faq-answer">
                     <p>È semplice! Entra nel nostro <strong>Discord</strong> e presentati nella sezione dedicata. I nostri membri ti accoglieranno e ti spiegheranno come funziona la nostra <strong>community italiana di Anvil Empires</strong>.</p>
-                    <button class="cta-button" onclick="joinDiscord()" style="margin-top: 15px; padding: 10px 20px; font-size: 1rem;">Entra in SPQR</button>
+                    <button class="cta-button" onclick="joinDiscord(event)" style="margin-top: 15px; padding: 10px 20px; font-size: 1rem;">Entra in SPQR</button>
                 </div>
             </div>
             <div class="faq-item">
@@ -311,7 +331,7 @@
             <h2 class="section-title">Unisciti alla Community SPQR</h2>
             <p style="font-size: 1.3rem; margin-bottom: 30px;">Interessato a far parte di una <strong>community italiana di Anvil Empires</strong> accogliente e organizzata? Unisciti a <strong>SPQR</strong> e scopri il piacere di giocare insieme!</p>
             
-            <button class="cta-button" onclick="joinDiscord()">Entra nel Discord</button>
+            <button class="cta-button" onclick="joinDiscord(event)">Entra nel Discord</button>
             
             <div style="margin-top: 30px; color: var(--dark-gold); font-style: italic;">
                 🏛️ Una <strong>community italiana</strong> che ti aspetta con entusiasmo<br>
@@ -325,77 +345,169 @@
     <footer>
         <p>&copy; 2024 SPQR - Community Italiana Anvil Empires | Clan Gaming Cooperativo</p>
         <div class="social-links">
-            <a href="javascript:void(0)" onclick="joinDiscord(); return false;" title="Discord Community SPQR" aria-label="Discord SPQR">💬</a>
-            <a href="javascript:void(0)" onclick="joinDiscord(); return false;" title="Clan SPQR Anvil Empires" aria-label="Clan SPQR">🎮</a>
-            <a href="javascript:void(0)" onclick="joinDiscord(); return false;" title="Community Italiana SPQR" aria-label="Community SPQR">👥</a>
-            <a href="javascript:void(0)" onclick="joinDiscord(); return false;" title="Gaming Cooperativo SPQR" aria-label="Gaming SPQR">⚔️</a>
+            <a href="javascript:void(0)" onclick="joinDiscord(event); return false;" title="Discord Community SPQR" aria-label="Discord SPQR">💬</a>
+            <a href="javascript:void(0)" onclick="joinDiscord(event); return false;" title="Clan SPQR Anvil Empires" aria-label="Clan SPQR">🎮</a>
+            <a href="javascript:void(0)" onclick="joinDiscord(event); return false;" title="Community Italiana SPQR" aria-label="Community SPQR">👥</a>
+            <a href="javascript:void(0)" onclick="joinDiscord(event); return false;" title="Gaming Cooperativo SPQR" aria-label="Gaming SPQR">⚔️</a>
         </div>
     </footer>
 
+    <!-- JavaScript Ottimizzato Mobile -->
     <script>
-		// URL Discord da personalizzare
-		const DISCORD_INVITE = "https://discord.gg/J5qCtB872U";
+        // ========================================
+        // SPQR - JavaScript Ottimizzato Mobile
+        // ========================================
 
-		// Variabile per evitare chiamate multiple
-		let isDiscordOpening = false;
+        // URL Discord
+        const DISCORD_INVITE = "https://discord.gg/J5qCtB872U";
 
-		function joinDiscord(event) {
-			// Previeni comportamenti predefiniti e propagazione
-			if (event) {
-				event.preventDefault();
-				event.stopPropagation();
-			}
-			
-			// Evita chiamate multiple rapide
-			if (isDiscordOpening) {
-				console.log('Discord già in apertura, ignorato');
-				return false;
-			}
-			
-			isDiscordOpening = true;
-			console.log('Tentativo di apertura Discord:', DISCORD_INVITE);
-			
-			// Reset del flag dopo 2 secondi
-			setTimeout(() => {
-				isDiscordOpening = false;
-			}, 2000);
-			
-			try {
-				if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
-					// Mobile: prova prima l'app, poi il browser
-					const discordApp = DISCORD_INVITE.replace('https://discord.gg/', 'discord://discord.gg/');
-					window.location.href = discordApp;
-					setTimeout(() => {
-						window.open(DISCORD_INVITE, '_blank');
-					}, 1000);
-				} else {
-					// Desktop: apri solo in nuova tab
-					window.open(DISCORD_INVITE, '_blank', 'noopener,noreferrer');
-				}
-			} catch (error) {
-				console.error('Errore apertura Discord:', error);
-				isDiscordOpening = false;
-			}
-			
-			return false;
-		}
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.toggle('active');
+        // Variabili globali
+        let isDiscordOpening = false;
+        let touchStartY = 0;
+        let isMobile = false;
+
+        // Detecta se è mobile
+        function detectMobile() {
+            isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+                        (window.innerWidth <= 768);
+            return isMobile;
         }
 
-        // Chiudi menu mobile quando si clicca su un link
-        document.querySelectorAll('#nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav-menu').classList.remove('active');
-            });
-        });
+        // ========================================
+        // GESTIONE DISCORD
+        // ========================================
+        function joinDiscord(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            if (isDiscordOpening) return false;
+            
+            isDiscordOpening = true;
+            
+            // Vibrazione su mobile (se supportata)
+            if (isMobile && navigator.vibrate) {
+                navigator.vibrate(50);
+            }
+            
+            setTimeout(() => {
+                isDiscordOpening = false;
+            }, 2000);
+            
+            try {
+                if (isMobile) {
+                    // Mobile: prova prima l'app
+                    const discordApp = DISCORD_INVITE.replace('https://discord.gg/', 'discord://discord.com/invite/');
+                    
+                    // Crea un iframe nascosto per tentare di aprire l'app
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = discordApp;
+                    document.body.appendChild(iframe);
+                    
+                    // Dopo un breve delay, apri nel browser se l'app non si è aperta
+                    setTimeout(() => {
+                        document.body.removeChild(iframe);
+                        window.open(DISCORD_INVITE, '_blank');
+                    }, 1500);
+                } else {
+                    // Desktop
+                    window.open(DISCORD_INVITE, '_blank', 'noopener,noreferrer');
+                }
+            } catch (error) {
+                console.error('Errore apertura Discord:', error);
+                // Fallback
+                window.location.href = DISCORD_INVITE;
+                isDiscordOpening = false;
+            }
+            
+            return false;
+        }
 
-        // Ottimizzazione delle particelle
+        // ========================================
+        // MENU MOBILE
+        // ========================================
+        function toggleMobileMenu() {
+            const menu = document.getElementById('nav-menu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            const body = document.body;
+            
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+            
+            // Aggiorna aria-expanded
+            const isOpen = menu.classList.contains('active');
+            btn.setAttribute('aria-expanded', isOpen);
+            
+            // Previeni scroll quando il menu è aperto
+            if (isOpen) {
+                body.style.overflow = 'hidden';
+                body.style.position = 'fixed';
+                body.style.width = '100%';
+            } else {
+                body.style.overflow = '';
+                body.style.position = '';
+                body.style.width = '';
+            }
+        }
+
+        // Chiudi menu quando si clicca fuori
+        function closeMobileMenu(e) {
+            const menu = document.getElementById('nav-menu');
+            const btn = document.querySelector('.mobile-menu-btn');
+            
+            if (!menu.contains(e.target) && !btn.contains(e.target) && menu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        }
+
+        // ========================================
+        // SMOOTH SCROLL OTTIMIZZATO
+        // ========================================
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    
+                    if (target) {
+                        // Chiudi menu mobile se aperto
+                        const menu = document.getElementById('nav-menu');
+                        if (menu && menu.classList.contains('active')) {
+                            toggleMobileMenu();
+                        }
+                        
+                        // Calcola offset per mobile
+                        const navHeight = document.querySelector('nav').offsetHeight;
+                        const offsetTop = target.offsetTop - navHeight - 10;
+                        
+                        // Smooth scroll con supporto nativo
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Fallback per browser che non supportano smooth scroll
+                        if (!('scrollBehavior' in document.documentElement.style)) {
+                            window.scrollTo(0, offsetTop);
+                        }
+                    }
+                });
+            });
+        }
+
+        // ========================================
+        // PARTICELLE OTTIMIZZATE PER MOBILE
+        // ========================================
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
-            const particleCount = window.innerWidth < 768 ? 15 : 25;
+            
+            // Meno particelle su mobile per performance
+            const particleCount = isMobile ? 10 : 20;
             
             particlesContainer.innerHTML = '';
             
@@ -403,98 +515,244 @@
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 25 + 's';
-                particle.style.animationDuration = (20 + Math.random() * 15) + 's';
+                particle.style.animationDelay = Math.random() * 30 + 's';
+                particle.style.animationDuration = (25 + Math.random() * 15) + 's';
                 particlesContainer.appendChild(particle);
             }
         }
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href') === '#') return; // Skip empty anchors
-                
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        // ========================================
+        // INTERSECTION OBSERVER PER ANIMAZIONI
+        // ========================================
+        function initAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        // Observer per animazioni
-        const observerOptions2 = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer2 = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer2.unobserve(entry.target);
-                }
-            });
-        }, observerOptions2);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer2.observe(el);
-        });
-
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isActive = question.classList.contains('active');
-                
-                // Chiudi tutte le altre FAQ
-                document.querySelectorAll('.faq-question').forEach(q => {
-                    q.classList.remove('active');
-                    q.nextElementSibling.classList.remove('active');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Per mobile, disabilita l'observer dopo l'animazione
+                        if (isMobile) {
+                            observer.unobserve(entry.target);
+                        }
+                    }
                 });
-                
-                // Toggle quella corrente
-                if (!isActive) {
-                    question.classList.add('active');
-                    answer.classList.add('active');
-                }
-            });
-        });
+            }, observerOptions);
 
-        // Inizializzazione
-        function init() {
-            createParticles();
-            
-            // Gestione resize
-            let resizeTimeout;
-            window.addEventListener('resize', () => {
-                if (resizeTimeout) {
-                    clearTimeout(resizeTimeout);
-                }
-                resizeTimeout = setTimeout(createParticles, 250);
+            // Osserva elementi con animazione
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
             });
         }
 
-        // Performance: pausa animazioni quando tab non è attivo
-        document.addEventListener('visibilitychange', function() {
+        // ========================================
+        // FAQ OTTIMIZZATE PER TOUCH
+        // ========================================
+        function initFAQ() {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                // Supporto touch e click
+                const handleToggle = (e) => {
+                    e.preventDefault();
+                    
+                    const answer = question.nextElementSibling;
+                    const isActive = question.classList.contains('active');
+                    
+                    // Chiudi tutte le altre FAQ
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle quella corrente
+                    if (!isActive) {
+                        question.classList.add('active');
+                        answer.classList.add('active');
+                        
+                        // Scroll automatico su mobile
+                        if (isMobile) {
+                            setTimeout(() => {
+                                const navHeight = document.querySelector('nav').offsetHeight;
+                                const offsetTop = question.offsetTop - navHeight - 20;
+                                window.scrollTo({
+                                    top: offsetTop,
+                                    behavior: 'smooth'
+                                });
+                            }, 300);
+                        }
+                    } else {
+                        question.classList.remove('active');
+                        answer.classList.remove('active');
+                    }
+                };
+                
+                question.addEventListener('click', handleToggle);
+            });
+        }
+
+        // ========================================
+        // GESTIONE ORIENTAMENTO
+        // ========================================
+        function handleOrientationChange() {
+            // Ricalcola se è mobile
+            detectMobile();
+            
+            // Ricrea particelle con nuovo conteggio
+            createParticles();
+            
+            // Chiudi menu mobile se aperto
+            const menu = document.getElementById('nav-menu');
+            if (menu && menu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        }
+
+        // ========================================
+        // OTTIMIZZAZIONE PERFORMANCE
+        // ========================================
+        function optimizePerformance() {
+            let ticking = false;
+            
+            function updateOnScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        // Nascondi/mostra elementi per performance
+                        const scrollY = window.scrollY;
+                        const particles = document.getElementById('particles');
+                        
+                        if (isMobile && scrollY > window.innerHeight) {
+                            particles.style.display = 'none';
+                        } else {
+                            particles.style.display = 'block';
+                        }
+                        
+                        ticking = false;
+                    });
+                    
+                    ticking = true;
+                }
+            }
+            
+            // Throttled scroll event
+            window.addEventListener('scroll', updateOnScroll, { passive: true });
+        }
+
+        // ========================================
+        // GESTIONE TOUCH PER SWIPE
+        // ========================================
+        function initTouchHandlers() {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+            
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const touchEndY = e.changedTouches[0].screenY;
+                
+                // Calcola differenze
+                const diffX = touchStartX - touchEndX;
+                const diffY = touchStartY - touchEndY;
+                
+                // Solo swipe orizzontali significativi
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                    const menu = document.getElementById('nav-menu');
+                    
+                    // Swipe da destra a sinistra - chiudi menu
+                    if (diffX > 0 && menu.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                }
+            }, { passive: true });
+        }
+
+        // ========================================
+        // VISIBILITÀ TAB
+        // ========================================
+        function handleVisibilityChange() {
             const particles = document.querySelectorAll('.particle');
+            
             if (document.hidden) {
+                // Pausa animazioni quando tab non è visibile
                 particles.forEach(p => p.style.animationPlayState = 'paused');
             } else {
+                // Riprendi animazioni
                 particles.forEach(p => p.style.animationPlayState = 'running');
             }
-        });
+        }
 
-        // Inizializza
+        // ========================================
+        // INIZIALIZZAZIONE
+        // ========================================
+        function init() {
+            // Detecta mobile
+            detectMobile();
+            
+            // Inizializza componenti
+            createParticles();
+            initSmoothScroll();
+            initAnimations();
+            initFAQ();
+            
+            if (isMobile) {
+                initTouchHandlers();
+                optimizePerformance();
+            }
+            
+            // Event listeners globali
+            document.addEventListener('click', closeMobileMenu);
+            document.addEventListener('visibilitychange', handleVisibilityChange);
+            
+            // Gestione resize con debounce
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    handleOrientationChange();
+                }, 250);
+            });
+            
+            // Gestione orientamento mobile
+            window.addEventListener('orientationchange', () => {
+                setTimeout(handleOrientationChange, 100);
+            });
+            
+            // Previeni zoom su input focus (iOS)
+            if (isMobile) {
+                document.querySelectorAll('input, textarea, select').forEach(el => {
+                    el.addEventListener('focus', (e) => {
+                        e.target.style.fontSize = '16px';
+                    });
+                });
+            }
+        }
+
+        // Avvia quando DOM è pronto
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', init);
         } else {
             init();
         }
+
+        // Gestione errori globale
+        window.addEventListener('error', (e) => {
+            console.error('Errore globale:', e.error);
+        });
+
+        // Export per uso esterno
+        window.SPQR = {
+            joinDiscord,
+            toggleMobileMenu,
+            detectMobile
+        };
     </script>
 </body>
 </html>
