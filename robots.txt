@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://anvilempiresitalia.github.io/sitemap.xml
