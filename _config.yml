@@ -1,0 +1,11 @@
+# Configurazione di base
+title: "Anvil EmpireS italia"
+description: "Descrizione del tuo sito"
+url: "https://anvilempiresitalia.github.io/"
+
+# Plugin per la sitemap
+plugins:
+  - jekyll-sitemap
+
+# Altre impostazioni opzionali
+theme: jekyll-theme-primer
