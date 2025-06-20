@@ -21,8 +21,6 @@
     <!-- SEO OTTIMIZZATO PER RECLUTAMENTO ANVIL EMPIRES -->
     <title>SPQR Clan Anvil Empires Italia | Cerca Giocatori Italiani</title>
     <meta name="description" content="Cerchi giocatori italiani per Anvil Empires? Unisciti a SPQR! Discord attivo con clan italiano organizzato. Reclutamento aperto per giocatori di tutti i livelli.">
-    
-    <!-- RIMOSSO: Meta Keywords (inutili dal 2009) -->
     <meta name="author" content="SPQR Anvil Empires Italia">
     
     <!-- Canonical URL -->
@@ -46,22 +44,16 @@
     <meta property="og:site_name" content="SPQR Anvil Empires Italia">
     <meta property="og:locale" content="it_IT">
     
-    <!-- RIMOSSO: Twitter Cards (non avete Twitter) -->
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V3J668W2PV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-V3J668W2PV');
     </script>
     
-    <!-- Structured Data SEMPLIFICATO -->
+    <!-- Structured Data OTTIMIZZATO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -100,262 +92,1729 @@
       }
     }
     </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #FFD700;
+            --dark-gold: #B8860B;
+            --roman-red: #8B0000;
+            --deep-black: #000000;
+            --soft-white: #F5F5F7;
+            --text-gray: #1D1D1F;
+            --accent-blue: #007AFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--deep-black);
+            color: var(--soft-white);
+            overflow-x: hidden;
+            line-height: 1.4;
+            min-height: 100vh;
+        }
+
+        /* ===============================
+           NAVIGATION - FIXED BUGS
+           =============================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            z-index: 1000;
+            transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateY(-100px);
+            opacity: 0;
+            animation: navSlideDown 2s ease-out 1s forwards;
+        }
+
+        @keyframes navSlideDown {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: 700;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: scale(0);
+            animation: logoScale 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s forwards;
+        }
+
+        @keyframes logoScale {
+            0% { 
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+            70% { 
+                transform: scale(1.2) rotate(10deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .logo:hover {
+            transform: scale(1.1) rotate(5deg);
+            text-shadow: 0 0 30px var(--primary-gold);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold), var(--roman-red));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: logoFloat 4s ease-in-out infinite;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: relative;
+            z-index: 2;
+            width: 80%;
+            height: 80%;
+            background-image: url('./images/logo-anvil-italia-sfondo-removebg-preview.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: block;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: logoSpin 8s linear infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(2deg); }
+            50% { transform: translateY(-3px) rotate(-1deg); }
+            75% { transform: translateY(-7px) rotate(1deg); }
+        }
+
+        @keyframes logoSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        .nav-links li:nth-child(1) { animation: navItemSlide 0.8s ease-out 2s forwards; }
+        .nav-links li:nth-child(2) { animation: navItemSlide 0.8s ease-out 2.1s forwards; }
+        .nav-links li:nth-child(3) { animation: navItemSlide 0.8s ease-out 2.2s forwards; }
+        .nav-links li:nth-child(4) { animation: navItemSlide 0.8s ease-out 2.3s forwards; }
+
+        @keyframes navItemSlide {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-links a {
+            color: var(--soft-white);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-gold), var(--roman-red));
+            opacity: 0;
+            border-radius: 25px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: scale(0);
+        }
+
+        .nav-links a:hover::before {
+            opacity: 0.15;
+            transform: scale(1);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+            transform: translateY(-3px);
+        }
+
+        .discord-btn {
+            background: linear-gradient(135deg, #5865F2, #4752C4);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 10px 30px rgba(88, 101, 242, 0.4);
+            position: relative;
+            overflow: hidden;
+            transform: scale(0);
+            animation: discordBtnAppear 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.5s forwards;
+        }
+
+        @keyframes discordBtnAppear {
+            0% { 
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+            70% { 
+                transform: scale(1.1) rotate(10deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .discord-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .discord-btn:hover::before {
+            left: 100%;
+        }
+
+        .discord-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(88, 101, 242, 0.6);
+        }
+
+        /* ===============================
+           HERO SECTION - OPTIMIZED
+           =============================== */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #2a2a2a 0%, #1a1a1a 50%, #000000 90%);
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+            animation: heroBackgroundPulse 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroBackgroundPulse {
+            0% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 0.7;
+            }
+            100% { 
+                transform: scale(1.1) rotate(2deg);
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            z-index: 10;
+            position: relative;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .hero-logo-container {
+            position: relative;
+            margin-bottom: 30px;
+            margin-top: 180px;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold), var(--roman-red));
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            position: relative;
+            overflow: hidden;
+            transform: scale(0) rotate(-360deg);
+            opacity: 0;
+            animation: heroLogoMegaEntrance 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards;
+            box-shadow: 
+                0 0 100px rgba(255, 215, 0, 0.6),
+                inset 0 0 100px rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes heroLogoMegaEntrance {
+            0% {
+                transform: scale(0) rotate(-360deg);
+                opacity: 0;
+                filter: blur(20px);
+            }
+            50% {
+                transform: scale(1.3) rotate(-180deg);
+                opacity: 0.8;
+                filter: blur(5px);
+            }
+            70% {
+                transform: scale(0.9) rotate(-90deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+        }
+
+        .hero-logo::before {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            width: 80%;
+            height: 80%;
+            background-image: url('./images/logo-anvil-italia-sfondo-removebg-preview.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: logoContentFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes logoContentFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            25% { 
+                transform: translateY(-10px) rotate(5deg) scale(1.05);
+            }
+            50% { 
+                transform: translateY(-5px) rotate(-3deg) scale(0.98);
+            }
+            75% { 
+                transform: translateY(-15px) rotate(2deg) scale(1.02);
+            }
+        }
+
+        .hero-logo::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 3px solid var(--primary-gold);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: heroLogoRing 10s linear infinite;
+        }
+
+        @keyframes heroLogoRing {
+            from { 
+                transform: rotate(0deg) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: rotate(180deg) scale(1.1);
+                opacity: 0.3;
+            }
+            to { 
+                transform: rotate(360deg) scale(1);
+                opacity: 0.6;
+            }
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .hero-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: heroParticleFloat 4s ease-in-out infinite;
+        }
+
+        .hero-particle:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+        .hero-particle:nth-child(2) { top: 20%; right: 20%; animation-delay: 0.5s; }
+        .hero-particle:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 1s; }
+        .hero-particle:nth-child(4) { bottom: 20%; right: 20%; animation-delay: 1.5s; }
+        .hero-particle:nth-child(5) { top: 50%; left: 10%; animation-delay: 2s; }
+        .hero-particle:nth-child(6) { top: 50%; right: 10%; animation-delay: 2.5s; }
+
+        @keyframes heroParticleFloat {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-30px) scale(1.5);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 10vw, 90px);
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -3px;
+            position: relative;
+            transform: translateY(100px);
+            opacity: 0;
+            animation: heroTitleMegaSlide 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s forwards;
+            background: linear-gradient(135deg, var(--primary-gold), var(--soft-white), var(--primary-gold));
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: heroTitleMegaSlide 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s forwards,
+                       heroTitleShine 3s ease-in-out 3s infinite;
+        }
+
+        @keyframes heroTitleMegaSlide {
+            0% {
+                transform: translateY(100px) scale(0.8);
+                opacity: 0;
+                filter: blur(20px);
+            }
+            60% {
+                transform: translateY(-20px) scale(1.1);
+                opacity: 0.8;
+                filter: blur(5px);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes heroTitleShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .letter {
+            display: inline-block;
+            transform: translateY(100px) rotate(15deg);
+            opacity: 0;
+            animation: letterFall 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .letter:nth-child(1) { animation-delay: 2s; }
+        .letter:nth-child(2) { animation-delay: 2.1s; }
+        .letter:nth-child(3) { animation-delay: 2.2s; }
+        .letter:nth-child(4) { animation-delay: 2.3s; }
+
+        @keyframes letterFall {
+            0% {
+                transform: translateY(-150px) rotate(45deg) scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(20px) rotate(-10deg) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: var(--dark-gold);
+            font-weight: 600;
+            transform: translateX(-100px);
+            opacity: 0;
+            animation: heroSubtitleSlide 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.5s forwards;
+        }
+
+        @keyframes heroSubtitleSlide {
+            0% {
+                transform: translateX(-100px) scale(0.5);
+                opacity: 0;
+                filter: blur(10px);
+            }
+            100% {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+                filter: blur(0px);
+            }
+        }
+
+        .hero-description {
+            font-size: 18px;
+            margin-bottom: 20px;
+            opacity: 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            transform: translateX(100px);
+            animation: heroDescSlide 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3s forwards;
+        }
+
+        @keyframes heroDescSlide {
+            0% {
+                transform: translateX(100px) scale(0.5);
+                opacity: 0;
+                filter: blur(10px);
+            }
+            100% {
+                transform: translateX(0) scale(1);
+                opacity: 1;
+                filter: blur(0px);
+            }
+        }
+
+        .recruitment-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid #22c55e;
+            border-radius: 50px;
+            padding: 12px 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 16px;
+            transform: scale(0);
+            opacity: 0;
+            animation: statusBadgeExplode 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3.5s forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes statusBadgeExplode {
+            0% {
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+            70% {
+                transform: scale(1.3) rotate(10deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .recruitment-status::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: statusSweep 2s ease-in-out infinite 4s;
+        }
+
+        @keyframes statusSweep {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .status-dot {
+            width: 15px;
+            height: 15px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: statusDotPulse 1.5s ease-in-out infinite;
+            box-shadow: 0 0 20px #22c55e;
+            flex-shrink: 0;
+        }
+
+        @keyframes statusDotPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 20px #22c55e;
+            }
+            50% { 
+                transform: scale(1.3);
+                box-shadow: 0 0 30px #22c55e, 0 0 40px #22c55e;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: radial-gradient(ellipse, rgba(42, 42, 42, 0.8) 0%, rgba(26, 26, 26, 0.4) 70%, transparent 100%);
+            border-radius: 50px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            color: var(--deep-black);
+            padding: 16px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(50px) scale(0.8);
+            opacity: 0;
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4);
+        }
+
+        .cta-button:nth-child(1) {
+            animation: ctaButtonRise 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 4s forwards;
+        }
+
+        .cta-button:nth-child(2) {
+            background: transparent;
+            border: 3px solid var(--primary-gold);
+            color: var(--primary-gold);
+            animation: ctaButtonRise 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 4.2s forwards;
+        }
+
+        @keyframes ctaButtonRise {
+            0% {
+                transform: translateY(50px) scale(0.8) rotate(-10deg);
+                opacity: 0;
+                filter: blur(5px);
+            }
+            70% {
+                transform: translateY(-10px) scale(1.1) rotate(5deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+            100% {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.6);
+        }
+
+        /* ===============================
+           SCROLL SECTIONS - FIXED PERFORMANCE
+           =============================== */
+        .scroll-section {
+            min-height: 100vh;
+            padding: 120px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-section:nth-child(odd) {
+            background: radial-gradient(ellipse at center, #1a1a1a 0%, #000000 70%);
+        }
+
+        .scroll-section:nth-child(even) {
+            background: linear-gradient(135deg, #000000, #1a1a1a, #000000);
+        }
+
+        .scroll-content {
+            max-width: 1200px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-content.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--soft-white));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: scale(0.5);
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+        }
+
+        .scroll-content.animate .section-title {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .features-mega-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .mega-feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(255, 215, 0, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(100px) scale(0.8);
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .scroll-content.animate .mega-feature-card:nth-child(1) {
+            transition-delay: 0.2s;
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .scroll-content.animate .mega-feature-card:nth-child(2) {
+            transition-delay: 0.4s;
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .scroll-content.animate .mega-feature-card:nth-child(3) {
+            transition-delay: 0.6s;
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .mega-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(139, 0, 0, 0.05));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .mega-feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .mega-feature-card:hover {
+            transform: translateY(-20px) scale(1.05);
+            border-color: var(--primary-gold);
+            box-shadow: 0 30px 80px rgba(255, 215, 0, 0.3);
+        }
+
+        .mega-feature-icon {
+            font-size: 80px;
+            margin-bottom: 40px;
+            display: block;
+            transform: scale(0);
+            animation: featureIconPop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .scroll-content.animate .mega-feature-card:nth-child(1) .mega-feature-icon {
+            animation-delay: 0.5s;
+        }
+
+        .scroll-content.animate .mega-feature-card:nth-child(2) .mega-feature-icon {
+            animation-delay: 0.7s;
+        }
+
+        .scroll-content.animate .mega-feature-card:nth-child(3) .mega-feature-icon {
+            animation-delay: 0.9s;
+        }
+
+        @keyframes featureIconPop {
+            0% {
+                transform: scale(0) rotate(-180deg);
+                opacity: 0;
+            }
+            70% {
+                transform: scale(1.3) rotate(10deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .mega-feature-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--primary-gold);
+        }
+
+        .mega-feature-description {
+            font-size: 18px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* ===============================
+           GAME SHOWCASE - OPTIMIZED
+           =============================== */
+        .cinematic-game-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #0a0a0a);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cinematic-game-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+            animation: cinematicBackgroundFloat 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes cinematicBackgroundFloat {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.2) rotate(5deg); }
+        }
+
+        .game-showcase-container {
+            max-width: 1400px;
+            width: 100%;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .game-title {
+            font-size: clamp(60px, 10vw, 120px);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--roman-red), var(--primary-gold));
+            background-size: 300% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gameTitle 4s ease-in-out infinite;
+            text-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+        }
+
+        @keyframes gameTitle {
+            0%, 100% { 
+                background-position: 0% 50%;
+                transform: scale(1);
+            }
+            50% { 
+                background-position: 100% 50%;
+                transform: scale(1.05);
+            }
+        }
+
+        .game-features-cinema {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .cinema-feature {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cinema-feature:hover {
+            transform: translateY(-15px) scale(1.05);
+            border-color: var(--primary-gold);
+            box-shadow: 0 25px 70px rgba(255, 215, 0, 0.4);
+        }
+
+        .cinema-feature::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: featureRotate 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .cinema-feature:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes featureRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===============================
+           FAQ CONTAINER - INTEGRATO CON SCROLL ANIMATIONS
+           =============================== */
+        .faq-mega-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-mega-item {
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .faq-mega-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .faq-mega-question {
+            background: rgba(255, 215, 0, 0.05);
+            padding: 30px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            user-select: none;
+        }
+
+        .faq-mega-question:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--primary-gold);
+        }
+
+        .faq-mega-question::after {
+            content: '+';
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            color: var(--primary-gold);
+        }
+
+        .faq-mega-question.active::after {
+            transform: translateY(-50%) rotate(45deg) scale(1.2);
+            color: var(--roman-red);
+        }
+
+        .faq-mega-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .faq-mega-answer.active {
+            max-height: 300px;
+            padding: 30px;
+        }
+
+        .faq-mega-answer p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ===============================
+           FLOATING DISCORD WIDGET - IMPROVED
+           =============================== */
+        .discord-mega-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #5865F2, #4752C4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 15px 40px rgba(88, 101, 242, 0.5);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: discordFloat 4s ease-in-out infinite;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+        }
+
+        @keyframes discordFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            25% { 
+                transform: translateY(-10px) rotate(5deg) scale(1.05);
+            }
+            50% { 
+                transform: translateY(-5px) rotate(-3deg) scale(0.95);
+            }
+            75% { 
+                transform: translateY(-15px) rotate(2deg) scale(1.02);
+            }
+        }
+
+        .discord-mega-float:hover {
+            transform: scale(1.2) translateY(-10px) rotate(10deg);
+            box-shadow: 0 25px 60px rgba(88, 101, 242, 0.7);
+            border-color: var(--primary-gold);
+        }
+
+        .discord-mega-float::before {
+            content: '💬';
+            font-size: 35px;
+            animation: discordIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes discordIcon {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .discord-mega-float::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 25px;
+            height: 25px;
+            background: var(--roman-red);
+            border-radius: 50%;
+            border: 3px solid white;
+            animation: notificationPulse 2s ease-in-out infinite;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            background: var(--roman-red);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: notificationPulse 2s ease-in-out infinite;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        @keyframes notificationPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(139, 0, 0, 0.7);
+            }
+            50% { 
+                transform: scale(1.2);
+                box-shadow: 0 0 0 10px rgba(139, 0, 0, 0);
+            }
+        }
+
+        /* ===============================
+           PARTICLES SYSTEM - OPTIMIZED
+           =============================== */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .mega-particle {
+            position: absolute;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            opacity: 0;
+            animation: megaParticleFloat 20s linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes megaParticleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(90vh) translateX(5px) rotate(36deg) scale(1);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(10vh) translateX(45px) rotate(324deg) scale(1);
+            }
+            100% {
+                transform: translateY(-10vh) translateX(50px) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* ===============================
+           FOOTER - OPTIMIZED
+           =============================== */
+        .mega-footer {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            padding: 80px 40px;
+            text-align: center;
+            border-top: 2px solid var(--primary-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mega-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
+            animation: footerGlow 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes footerGlow {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--soft-white));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--soft-white);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid transparent;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            border-color: var(--primary-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--soft-white);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-gold);
+            background: rgba(255, 215, 0, 0.2);
+            border-color: var(--primary-gold);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* ===============================
+           SCROLL PROGRESS BAR
+           =============================== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--roman-red));
+            z-index: 1001;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px var(--primary-gold);
+        }
+
+        /* ===============================
+           MOBILE RESPONSIVE - FIXED
+           =============================== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .hero-logo {
+                width: 180px;
+                height: 180px;
+                font-size: 80px;
+            }
+
+            .hero h1 {
+                font-size: clamp(36px, 8vw, 48px);
+            }
+
+            .hero-subtitle {
+                font-size: 24px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .scroll-section {
+                padding: 80px 20px;
+            }
+
+            .features-mega-grid,
+            .game-features-cinema {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .mega-feature-card {
+                padding: 30px;
+                min-height: auto;
+            }
+
+            .mega-feature-icon {
+                font-size: 60px;
+                margin-bottom: 20px;
+            }
+
+            .mega-feature-title {
+                font-size: 24px;
+            }
+
+            .mega-feature-description {
+                font-size: 16px;
+            }
+
+            .discord-mega-float {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .discord-mega-float::before {
+                font-size: 25px;
+            }
+
+            .discord-mega-float::after {
+                width: 20px;
+                height: 20px;
+                top: -3px;
+                right: -3px;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .faq-mega-question {
+                padding: 20px;
+                font-size: 18px;
+            }
+
+            .faq-mega-question::after {
+                right: 20px;
+                font-size: 24px;
+            }
+
+            .faq-mega-answer.active {
+                padding: 20px;
+            }
+
+            .game-showcase-container,
+            .faq-mega-section {
+                padding: 80px 20px;
+            }
+        }
+
+        /* ===============================
+           PERFORMANCE OPTIMIZATIONS
+           =============================== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .mega-particle,
+            .hero-particle {
+                display: none;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .hero-logo,
+            .logo-icon {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-links a,
+            .cta-button,
+            .discord-mega-float,
+            .faq-mega-question {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .mega-feature-card:hover,
+            .cinema-feature:hover {
+                transform: none;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --soft-white: #F5F5F7;
+                --text-gray: #F5F5F7;
+            }
+        }
+
+        /* Prevent layout shift */
+        .hero-content,
+        .scroll-content {
+            contain: layout style;
+        }
+    </style>
 </head>
 <body>
-    <!-- Particelle animate -->
-    <div id="particles"></div>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- Discord Widget Flottante -->
-    <div class="discord-widget" onclick="joinDiscord(event)" aria-label="Entra nel Discord per reclutamento">
-        <div class="notification-badge">!</div>
-    </div>
+    <!-- Mega Particles Container -->
+    <div class="particles-container" id="megaParticles"></div>
 
-    <!-- Navigazione -->
-    <nav id="navbar">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo" aria-label="SPQR Anvil Empires Italia - Home">
-                <div class="logo-emblem">
-                    <img src="./images/logo-anvil-italia-sfondo-removebg-preview.png" alt="Logo SPQR Anvil Empires Italia" class="logo-image">
-                </div>
-                <div class="logo-text">
-                    <div class="logo-title">SPQR Anvil Empires</div>
-                    <div class="logo-subtitle">Clan Italiano</div>
-                </div>
+            <a href="#home" class="logo">
+                <div class="logo-icon"></div>
+                <span>SPQR</span>
             </a>
-            
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu mobile">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul id="nav-menu">
-                <li><a href="#reclutamento">Reclutamento</a></li>
+            <ul class="nav-links">
                 <li><a href="#clan">Il Clan</a></li>
-                <li><a href="#anvil-empires">Anvil Empires</a></li>
+                <li><a href="#features">Caratteristiche</a></li>
+                <li><a href="#game">Anvil Empires</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="javascript:void(0)" onclick="joinDiscord(event); return false;" class="nav-discord">Entra nel Clan</a></li>
             </ul>
+            <a href="#" class="discord-btn" onclick="joinDiscord(event)">Entra nel Clan</a>
         </div>
     </nav>
 
-    <!-- Header Hero -->
-    <header id="home">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="hero-content">
-            <div class="clan-emblem" aria-label="Emblema SPQR Anvil Empires">
-                <img src="./images/logo-anvil-italia-sfondo-removebg-preview.png" alt="SPQR Anvil Empires Italia" class="clan-emblem-image">
+            <div class="hero-logo-container">
+                <div class="hero-logo" role="img" aria-label="Emblema SPQR Anvil Empires"></div>
+                <div class="hero-particles">
+                    <div class="hero-particle"></div>
+                    <div class="hero-particle"></div>
+                    <div class="hero-particle"></div>
+                    <div class="hero-particle"></div>
+                    <div class="hero-particle"></div>
+                    <div class="hero-particle"></div>
+                </div>
             </div>
-            <h1 id="main-title">Anvil Empires Italia - SPQR - Clan italiano</h1>
-            <p class="subtitle">Clan Italiano Anvil Empires</p>
-            <p class="subtitle-anvil">🏛️ Reclutamento aperto per giocatori italiani</p>
             
-            <!-- Stato Reclutamento -->
+            <h1>
+                <span class="letter">S</span>
+                <span class="letter">P</span>
+                <span class="letter">Q</span>
+                <span class="letter">R</span>
+            </h1>
+            
+            <div class="hero-subtitle">Clan Italiano Anvil Empires</div>
+            <p class="hero-description">
+                🏛️ Reclutamento aperto per giocatori italiani di Anvil Empires.<br>
+                Strategia militare, costruzione collaborativa, gloria eterna.
+            </p>
+            
             <div class="recruitment-status">
-                <div class="status-badge">
-                    <span class="status-icon">🟢</span>
-                    <span class="status-text">RECLUTAMENTO APERTO</span>
-                </div>
-                <p class="recruitment-text">
-                    Cerchiamo giocatori italiani per Anvil Empires!<br>
-                    Preparati per il dominio italiano nel gioco
-                </p>
+                <div class="status-dot"></div>
+                <span>RECLUTAMENTO APERTO</span>
             </div>
             
-            <!-- CTA Reclutamento -->
-            <div class="recruitment-cta">
-                <button class="cta-button-primary" onclick="joinDiscord(event)">
-                    🎮 Unisciti al Clan
-                </button>
-                <p class="cta-subtitle">
-                    <strong>Cosa offriamo:</strong> Discord organizzato, supporto per nuovi giocatori, sessioni di gioco coordinate
-                </p>
+            <div class="hero-buttons">
+                <a href="#" class="cta-button" onclick="joinDiscord(event)" aria-label="Unisciti al clan SPQR su Discord">🎮 Unisciti al Clan</a>
+                <a href="#clan" class="cta-button">Scopri di Più</a>
+                            </div>
             </div>
-        </div>
-    </header>
-
-    <!-- Reclutamento --> 
-    <section id="reclutamento" class="fade-in">
-        <h2 class="section-title">Reclutamento Anvil Empires</h2>
-        <div class="recruitment-content">
-            <div class="recruitment-text">
-                <h3><span class="italian-flag-css"></span> Cerchi un clan italiano per Anvil Empires?</h3>
-                <p>SPQR è in fase di reclutamento attivo! Stiamo cercando giocatori italiani appassionati di Anvil Empires per costruire insieme la nostra community.</p>
-                
-                <h4>Cosa cerchiamo:</h4>
-                <ul>
-                    <li>✅ Giocatori italiani di qualsiasi livello</li>
-                    <li>✅ Interesse per Anvil Empires e giochi strategici</li>
-                    <li>✅ Voglia di collaborare e divertirsi in gruppo</li>
-                    <li>✅ Utilizzo di Discord per coordinamento</li>
-                </ul>
-
-                <h4>Cosa offriamo:</h4>
-                <ul>
-                    <li>🏛️ Clan organizzato con gerarchia chiara</li>
-                    <li>💬 Discord attivo con canali dedicati</li>
-                    <li>🤝 Supporto per giocatori nuovi ad Anvil Empires</li>
-                    <li>📅 Sessioni di gioco programmate</li>
-                    <li>🎯 Obiettivi di clan comuni e cooperazione</li>
-                </ul>
-
-                <div class="join-process">
-                    <h4>Come entrare nel clan:</h4>
-                    <ol>
-                        <li><strong>Entra nel Discord</strong> cliccando il pulsante qui sotto</li>
-                        <li><strong>Presentati</strong> nel canale #presentazioni</li>
-                        <li><strong>Leggi le regole</strong> del clan nel canale dedicato</li>
-                        <li><strong>Inizia a giocare</strong> con noi quando Anvil Empires sarà disponibile!</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-        
-        <div class="recruitment-banner">
-            <p><strong>🚀 IMPORTANTE:</strong> Siamo in preparazione per il lancio di Anvil Empires. Unisciti ora per essere pronto dal day one!</p>
-            <button class="cta-button" onclick="joinDiscord(event)">Entra nel Discord SPQR</button>
         </div>
     </section>
 
-    <!-- Il Clan -->
-    <section id="clan" class="fade-in">
-        <h2 class="section-title">Chi è SPQR</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p><strong>SPQR</strong> è un clan italiano specializzato in Anvil Empires. Siamo un gruppo di giocatori esperti che si prepara per costruire potenti città e imperi nel gioco.</p>
-                
-                <p>Il nostro clan si distingue per l'organizzazione e la strategia. Abbiamo giocatori con esperienza in giochi simili come Civilization, Age of Empires, e altri titoli strategici che ci aiutano ad affrontare Anvil Empires con competenza.</p>
-                
-                <p><strong>La nostra missione:</strong> Creare il clan italiano più organizzato e forte su Anvil Empires, dove ogni membro possa contribuire e crescere insieme agli altri.</p>
-                
-                <div class="clan-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Membri attivi</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Discord attivo</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Italiani</div>
-                    </div>
+    <!-- About Section -->
+    <section class="scroll-section" id="clan">
+        <div class="scroll-content">
+            <h2 class="section-title">Chi Siamo</h2>
+            <p style="text-align: center; font-size: 24px; margin-bottom: 50px; opacity: 1; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.6; color: var(--soft-white); background: rgba(0, 0, 0, 0.3); padding: 30px; border-radius: 15px; border: 1px solid rgba(255, 215, 0, 0.2);">
+                <strong style="color: var(--primary-gold);">SPQR</strong> è un clan italiano d'élite specializzato in Anvil Empires. Siamo una community di strateghi, costruttori e guerrieri uniti dalla passione per la conquista e la gloria romana.
+            </p>
+            
+            <div class="features-mega-grid">
+                <div class="mega-feature-card">
+                    <span class="mega-feature-icon">🏛️</span>
+                    <h3 class="mega-feature-title">Organizzazione Militare</h3>
+                    <p class="mega-feature-description">Struttura gerarchica romana con ruoli specializzati, tattiche coordinate e strategia a lungo termine per ogni conquista.</p>
+                </div>
+                <div class="mega-feature-card">
+                    <span class="mega-feature-icon">⚔️</span>
+                    <h3 class="mega-feature-title">Strategia Avanzata</h3>
+                    <p class="mega-feature-description">Pianificazione militare professionale, coordinamento di battaglia e diplomazia strategica per dominare il mondo di gioco.</p>
+                </div>
+                <div class="mega-feature-card">
+                    <span class="mega-feature-icon">🤝</span>
+                    <h3 class="mega-feature-title">Community Attiva</h3>
+                    <p class="mega-feature-description">Discord sempre attivo con oltre 50 membri italiani pronti a collaborare, supportare e conquistare insieme 24/7.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Anvil Empires -->
-    <section id="anvil-empires" class="fade-in">
-        <h2 class="section-title">Anvil Empires: Il Nostro Gioco</h2>
-        <div class="game-info">
-            <p>Anvil Empires è un gioco di strategia e costruzione dove i giocatori collaborano per costruire città, gestire risorse e espandere territori. Perfetto per clan organizzati come SPQR!</p>
+    <!-- Game Showcase -->
+    <section class="cinematic-game-section" id="game">
+        <div class="game-showcase-container">
+            <h2 class="game-title">Anvil Empires</h2>
+            <p style="text-align: center; font-size: 24px; margin-bottom: 50px; opacity: 0.9; line-height: 1.6;">
+                Il gioco di strategia che rivoluzionerà il genere. Costruisci imperi, conquista territori, domina la storia.
+            </p>
             
-            <div class="game-features">
-                <div class="feature-card">
-                    <h4>🏗️ Costruzione Collaborativa</h4>
-                    <p>Costruiremo insieme città magnifiche, ognuno specializzato in diversi ruoli e professioni.</p>
+            <div class="game-features-cinema">
+                <div class="cinema-feature">
+                    <span style="font-size: 60px; display: block; margin-bottom: 30px;">🏗️</span>
+                    <h4 style="color: var(--primary-gold); margin-bottom: 20px; font-size: 24px; font-weight: 700;">Costruzione Collaborativa</h4>
+                    <p style="font-size: 16px; opacity: 0.9; line-height: 1.6;">Costruiamo insieme città magnifiche, fortezze inespugnabili e meraviglie architettoniche che resistono nel tempo.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>⚔️ Strategia Militare</h4>
-                    <p>Coordineremo eserciti e difese per proteggere i nostri territori e espanderci.</p>
+                <div class="cinema-feature">
+                    <span style="font-size: 60px; display: block; margin-bottom: 30px;">💰</span>
+                    <h4 style="color: var(--primary-gold); margin-bottom: 20px; font-size: 24px; font-weight: 700;">Economia Complessa</h4>
+                    <p style="font-size: 16px; opacity: 0.9; line-height: 1.6;">Sistema economico avanzato con commercio, risorse strategiche e reti commerciali che richiedono coordinazione perfetta.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>💼 Economia Avanzata</h4>
-                    <p>Sistema economico complesso che richiede pianificazione e cooperazione tra membri.</p>
+                <div class="cinema-feature">
+                    <span style="font-size: 60px; display: block; margin-bottom: 30px;">🌍</span>
+                    <h4 style="color: var(--primary-gold); margin-bottom: 20px; font-size: 24px; font-weight: 700;">Mondo Persistente</h4>
+                    <p style="font-size: 16px; opacity: 0.9; line-height: 1.6;">Il nostro impero crescerà e perdurerà nel tempo, lasciando un'eredità duratura nella storia del gioco.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>🌍 Mondo Persistente</h4>
-                    <p>Il nostro impero crescerà nel tempo, richiedendo impegno costante del clan.</p>
-                </div>
-            </div>
-
-            <div class="preparation-status">
-                <h3>🎯 La Nostra Preparazione</h3>
-                <ul>
-                    <li>✅ Discord organizzato con canali tematici</li>
-                    <li>✅ Ruoli clan definiti (Costruttori, Guerrieri, Commercianti)</li>
-                    <li>✅ Strategia iniziale pianificata</li>
-                    <li>✅ Guide e tutorial condivisi</li>
-                    <li>⏳ Aspettiamo il lancio per dominare!</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="fade-in">
-        <h2 class="section-title">Domande Frequenti</h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Devo essere esperto di Anvil Empires per entrare?</h3>
-                </div>
-                <div class="faq-answer">
-                    <p><strong>No!</strong> Accettiamo giocatori di tutti i livelli. Anvil Empires è nuovo per tutti, quindi cresceremo insieme. Abbiamo membri esperti in giochi simili che aiuteranno i principianti.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Quanto tempo devo dedicare al clan?</h3>
-                </div>
-                <div class="faq-answer">
-                    <p>Non c'è un minimo obbligatorio! Giocare in gruppo è più divertente, ma capiamo che ognuno ha i propri ritmi. L'importante è essere attivi quando possibile e comunicare nel Discord.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Quando uscirà Anvil Empires?</h3>
-                </div>
-                <div class="faq-answer">
-                    <p>Il gioco è ancora in sviluppo. Proprio per questo è il momento perfetto per entrare nel clan e prepararsi insieme! Così saremo pronti dal day one.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <h3>Il clan costa qualcosa?</h3>
-                </div>
-                <div class="faq-answer">
-                    <p><strong>Assolutamente gratis!</strong> SPQR è una community di appassionati. L'unico "costo" è la voglia di divertirsi e collaborare con altri giocatori italiani.</p>
+                <div class="cinema-feature">
+                    <span style="font-size: 60px; display: block; margin-bottom: 30px;">👑</span>
+                    <h4 style="color: var(--primary-gold); margin-bottom: 20px; font-size: 24px; font-weight: 700;">Dominio Territoriale</h4>
+                    <p style="font-size: 16px; opacity: 0.9; line-height: 1.6;">Espandiamo strategicamente i nostri confini, consolidiamo il potere e instauriamo il dominio romano.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="join-final" class="fade-in">
-        <div class="final-cta">
-            <h2>🏛️ Entra in SPQR Oggi!</h2>
-            <p>Non aspettare il lancio di Anvil Empires per unirti a noi. Entra ora nel clan e preparati insieme agli altri giocatori italiani!</p>
+    <!-- Features Section -->
+    <section class="scroll-section" id="features">
+        <div class="scroll-content">
+            <h2 class="section-title">Cosa Offriamo</h2>
             
-            <div class="cta-buttons">
-                <button class="cta-button-primary" onclick="joinDiscord(event)">
-                    💬 Entra nel Discord
-                </button>
+            <div class="features-mega-grid">
+                <div class="mega-feature-card">
+                    <span class="mega-feature-icon">🎯</span>
+                    <h3 class="mega-feature-title">Obiettivi Chiari</h3>
+                    <p class="mega-feature-description">Roadmap dettagliata per la conquista, missioni coordinate e obiettivi strategici a breve e lungo termine per ogni membro del clan.</p>
+                </div>
+                <div class="mega-feature-card">
+                    <span class="mega-feature-icon">📚</span>
+                    <h3 class="mega-feature-title">Formazione Completa</h3>
+                    <p class="mega-feature-description">Guide avanzate, tutorial specializzati, mentorship dedicata e supporto continuativo per giocatori di ogni livello ed esperienza.</p>
+                </div>
+                <div class="mega-feature-card">
+                    <span class="mega-feature-icon">🏆</span>
+                    <h3 class="mega-feature-title">Competizione Elite</h3>
+                    <p class="mega-feature-description">Tornei interni, eventi speciali, classifiche di prestazione e riconoscimenti esclusivi per i migliori membri del clan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="scroll-section" id="faq">
+        <div class="scroll-content">
+            <h2 class="section-title">FAQ</h2>
+            
+            <div class="faq-mega-container">
+                <div class="faq-mega-item">
+                <div class="faq-mega-question">
+                    Devo essere esperto per entrare nel clan?
+                </div>
+                <div class="faq-mega-answer">
+                    <p><strong>Assolutamente no!</strong> Accettiamo giocatori di tutti i livelli. Anvil Empires è nuovo per tutti, quindi cresceremo insieme. I nostri veterani di giochi strategici aiuteranno i nuovi membri con guide personalizzate e supporto dedicato.</p>
+                </div>
             </div>
             
-            <div class="urgency-text">
-                <p>⏰ <strong>Reclutamento limitato:</strong> Stiamo selezionando i membri fondatori del clan. Più aspetti, più rischi di perdere il posto!</p>
+            <div class="faq-mega-item">
+                <div class="faq-mega-question">
+                    Quanto tempo devo dedicare al clan?
+                </div>
+                <div class="faq-mega-answer">
+                    <p>Non c'è un tempo minimo obbligatorio. L'importante è essere attivi quando possibile e comunicare nel Discord. La qualità della partecipazione conta più della quantità di ore. Organizziamo eventi per diversi fusi orari.</p>
+                </div>
+            </div>
+            
+            <div class="faq-mega-item">
+                <div class="faq-mega-question">
+                    Quando uscirà Anvil Empires?
+                </div>
+                <div class="faq-mega-answer">
+                    <p>Il gioco è ancora in sviluppo attivo. Questo è il momento perfetto per entrare nel clan e prepararsi insieme! Avremo tutti i sistemi, le strategie e l'organizzazione pronti dal day one del lancio.</p>
+                </div>
+            </div>
+            
+            <div class="faq-mega-item">
+                <div class="faq-mega-question">
+                    Il clan ha dei costi o requisiti economici?
+                </div>
+                <div class="faq-mega-answer">
+                    <p><strong>Completamente gratuito!</strong> SPQR è una community di appassionati. L'unico "costo" è la voglia di divertirsi, collaborare e conquistare insieme. Nessuna donazione richiesta, solo passione condivisa.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 SPQR - Clan Italiano Anvil Empires | Reclutamento Aperto</p>
-        <div class="social-links">
-            <a href="javascript:void(0)" onclick="joinDiscord(event); return false;" title="Discord SPQR Anvil Empires" aria-label="Discord SPQR">💬</a>
-            <a href="javascript:void(0)" onclick="joinDiscord(event); return false;" title="Clan Anvil Empires" aria-label="Clan">🏛️</a>
-            <a href="javascript:void(0)" onclick="joinDiscord(event); return false;" title="Reclutamento" aria-label="Reclutamento">🎮</a>
+    <footer class="mega-footer">
+        <div class="footer-content">
+            <h3 class="footer-title">SPQR</h3>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#clan">Il Clan</a>
+                <a href="#features">Caratteristiche</a>
+                <a href="#game">Anvil Empires</a>
+                <a href="#faq">FAQ</a>
+                <a href="#" onclick="joinDiscord(event)" title="Discord SPQR Anvil Empires" aria-label="Discord SPQR">Discord</a>
+            </div>
+            <div class="social-links">
+                <a href="#" onclick="joinDiscord(event)" title="Discord SPQR Anvil Empires" aria-label="Discord SPQR">💬</a>
+                <a href="#" onclick="joinDiscord(event)" title="Clan Anvil Empires" aria-label="Clan">🏛️</a>
+                <a href="#" onclick="joinDiscord(event)" title="Reclutamento" aria-label="Reclutamento">🎮</a>
+            </div>
+            <p style="opacity: 0.7; font-size: 16px;">&copy; 2024 SPQR - Clan Italiano Anvil Empires | Reclutamento Aperto</p>
         </div>
     </footer>
 
-    <!-- JavaScript identico al precedente con funzioni Discord -->
+    <!-- Floating Discord Button -->
+    <div class="discord-mega-float" onclick="joinDiscord(event)" aria-label="Entra nel Discord per reclutamento">
+        <div class="notification-badge">!</div>
+    </div>
+
     <script>
+        // Discord integration OTTIMIZZATO
         const DISCORD_INVITE = "https://discord.gg/J5qCtB872U";
         let isDiscordOpening = false;
         let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (window.innerWidth <= 768);
-
+        
         function joinDiscord(event) {
             if (event) {
                 event.preventDefault();
@@ -366,6 +1825,7 @@
             
             isDiscordOpening = true;
             
+            // Mobile vibration feedback
             if (isMobile && navigator.vibrate) {
                 navigator.vibrate(50);
             }
@@ -374,8 +1834,53 @@
                 isDiscordOpening = false;
             }, 2000);
             
+            // Enhanced visual feedback
+            document.body.style.filter = 'brightness(1.2) saturate(1.3)';
+            document.body.style.transform = 'scale(1.02)';
+            
+            const resetVisuals = () => {
+                document.body.style.filter = '';
+                document.body.style.transform = '';
+            };
+            
+            setTimeout(resetVisuals, 300);
+            
+            // Enhanced flash effect
+            const flash = document.createElement('div');
+            flash.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, #5865F2, #FFD700);
+                opacity: 0.3;
+                z-index: 9999;
+                pointer-events: none;
+                animation: flashEffect 0.4s ease-out forwards;
+            `;
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes flashEffect {
+                    0% { opacity: 0.3; transform: scale(0.8); }
+                    50% { opacity: 0.6; transform: scale(1.1); }
+                    100% { opacity: 0; transform: scale(1); }
+                }
+            `;
+            
+            document.body.appendChild(flash);
+            document.head.appendChild(style);
+            
+            setTimeout(() => {
+                if (document.body.contains(flash)) document.body.removeChild(flash);
+                if (document.head.contains(style)) document.head.removeChild(style);
+            }, 400);
+            
+            // Advanced Discord opening logic
             try {
                 if (isMobile) {
+                    // Try Discord app first
                     const discordApp = DISCORD_INVITE.replace('https://discord.gg/', 'discord://discord.com/invite/');
                     const iframe = document.createElement('iframe');
                     iframe.style.display = 'none';
@@ -383,14 +1888,14 @@
                     document.body.appendChild(iframe);
                     
                     setTimeout(() => {
-                        document.body.removeChild(iframe);
-                        window.open(DISCORD_INVITE, '_blank');
+                        if (document.body.contains(iframe)) document.body.removeChild(iframe);
+                        // Fallback to web
+                        window.open(DISCORD_INVITE, '_blank', 'noopener,noreferrer');
                     }, 1500);
                 } else {
                     window.open(DISCORD_INVITE, '_blank', 'noopener,noreferrer');
                 }
             } catch (error) {
-                console.error('Errore apertura Discord:', error);
                 window.location.href = DISCORD_INVITE;
                 isDiscordOpening = false;
             }
@@ -398,334 +1903,261 @@
             return false;
         }
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('nav-menu');
-            const btn = document.querySelector('.mobile-menu-btn');
-            const body = document.body;
-            
-            menu.classList.toggle('active');
-            btn.classList.toggle('active');
-            
-            const isOpen = menu.classList.contains('active');
-            btn.setAttribute('aria-expanded', isOpen);
-            
-            if (isOpen) {
-                body.style.overflow = 'hidden';
-                body.style.position = 'fixed';
-                body.style.width = '100%';
-            } else {
-                body.style.overflow = '';
-                body.style.position = '';
-                body.style.width = '';
+        // Optimized scroll progress
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            if (scrollProgress) {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = Math.min((scrollTop / docHeight) * 100, 100);
+                scrollProgress.style.width = scrollPercent + '%';
             }
         }
 
-        // Inizializzazione semplificata
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scroll
+        // Optimized navbar updates
+        function updateNavbar() {
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                const shouldAddScrolled = window.scrollY > 100;
+                navbar.classList.toggle('scrolled', shouldAddScrolled);
+            }
+        }
+
+        // Optimized scroll animations with Intersection Observer
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animate')) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        // Throttled scroll handler
+        let ticking = false;
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateScrollProgress();
+                    updateNavbar();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        // FAQ functionality with proper error handling
+        function initializeFAQ() {
+            const faqQuestions = document.querySelectorAll('.faq-mega-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    if (!answer) return;
+                    
+                    const isActive = question.classList.contains('active');
+                    
+                    // Close all other FAQs
+                    faqQuestions.forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                            const otherAnswer = q.nextElementSibling;
+                            if (otherAnswer) otherAnswer.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current FAQ
+                    question.classList.toggle('active', !isActive);
+                    answer.classList.toggle('active', !isActive);
+                    
+                    // Add micro animation
+                    if (!isActive) {
+                        question.style.transform = 'scale(1.02)';
+                        setTimeout(() => {
+                            question.style.transform = '';
+                        }, 200);
+                    }
+                });
+            });
+        }
+
+        // Smooth scrolling with error handling
+        function initializeSmoothScrolling() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href') === '#') return;
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
                     if (target) {
-                        const navHeight = document.querySelector('nav').offsetHeight;
+                        const navbar = document.querySelector('.navbar');
+                        const navHeight = navbar ? navbar.offsetHeight : 80;
+                        const targetPosition = target.offsetTop - navHeight - 20;
+                        
                         window.scrollTo({
-                            top: target.offsetTop - navHeight - 10,
+                            top: Math.max(0, targetPosition),
                             behavior: 'smooth'
                         });
                     }
                 });
             });
+        }
 
-            // FAQ toggle
-            document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const answer = this.nextElementSibling;
-                    const isActive = this.classList.contains('active');
-                    
-                    // Chiudi altre FAQ
-                    document.querySelectorAll('.faq-question').forEach(q => {
-                        if (q !== this) {
-                            q.classList.remove('active');
-                            q.nextElementSibling.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle corrente
-                    if (!isActive) {
-                        this.classList.add('active');
-                        answer.classList.add('active');
-                    } else {
-                        this.classList.remove('active');
-                        answer.classList.remove('active');
-                    }
-                });
-            });
-
-            // Fade in animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Particelle semplici
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = isMobile ? 8 : 15;
+        // Optimized particle system
+        function createMegaParticles() {
+            const container = document.getElementById('megaParticles');
+            if (!container) return;
+            
+            const particleCount = window.innerWidth > 768 ? 15 : 8;
+            const fragment = document.createDocumentFragment();
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (20 + Math.random() * 10) + 's';
-                particlesContainer.appendChild(particle);
+                particle.className = 'mega-particle';
+                
+                // Optimized random values
+                const size = Math.random() * 3 + 2;
+                particle.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${Math.random() * 100}%;
+                    animation-delay: ${Math.random() * 20}s;
+                    animation-duration: ${20 + Math.random() * 15}s;
+                `;
+                
+                fragment.appendChild(particle);
+            }
+            
+            container.appendChild(fragment);
+        }
+
+        // Enhanced card hover effects
+        function initializeCardEffects() {
+            const cards = document.querySelectorAll('.mega-feature-card, .cinema-feature');
+            
+            cards.forEach(card => {
+                let isHovered = false;
+                
+                card.addEventListener('mouseenter', () => {
+                    isHovered = true;
+                    card.style.willChange = 'transform';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    isHovered = false;
+                    card.style.transform = '';
+                    card.style.willChange = 'auto';
+                });
+                
+                card.addEventListener('mousemove', (e) => {
+                    if (!isHovered) return;
+                    
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 15;
+                    const rotateY = (centerX - x) / 15;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-20px) scale(1.05)`;
+                });
+            });
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize all functionality
+            initializeFAQ();
+            initializeSmoothScrolling();
+            initializeCardEffects();
+            createMegaParticles();
+            
+            // Observe scroll sections
+            document.querySelectorAll('.scroll-content').forEach(el => {
+                scrollObserver.observe(el);
+            });
+            
+            // Initial calls
+            updateScrollProgress();
+            updateNavbar();
+        });
+
+        // Optimized Konami Code Easter Egg
+        let konamiCode = [];
+        const konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        
+        document.addEventListener('keydown', (e) => {
+            konamiCode.push(e.keyCode);
+            if (konamiCode.length > konami.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.toString() === konami.toString()) {
+                // Enhanced Easter Egg
+                document.body.style.animation = 'megaShake 1s ease-in-out';
+                
+                // Create optimized gold rain
+                const fragment = document.createDocumentFragment();
+                for (let i = 0; i < 30; i++) {
+                    const coin = document.createElement('div');
+                    coin.textContent = '🪙';
+                    coin.style.cssText = `
+                        position: fixed;
+                        top: -50px;
+                        left: ${Math.random() * 100}%;
+                        font-size: 30px;
+                        z-index: 9999;
+                        pointer-events: none;
+                        animation: coinFall 3s ease-in forwards;
+                        will-change: transform;
+                    `;
+                    fragment.appendChild(coin);
+                }
+                document.body.appendChild(fragment);
+                
+                // Add styles
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes megaShake {
+                        0%, 20%, 40%, 60%, 80%, 100% { transform: translateX(0); }
+                        10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                    }
+                    @keyframes coinFall {
+                        to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                    alert('🏛️ SPQR INVICTA! Hai scoperto il tesoro nascosto del clan! Per aspera ad astra! 🏛️');
+                    
+                    // Cleanup
+                    document.querySelectorAll('div').forEach(el => {
+                        if (el.textContent === '🪙') el.remove();
+                    });
+                    if (document.head.contains(style)) document.head.removeChild(style);
+                }, 3000);
             }
         });
+
+        // Performance monitoring
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                // Website loaded and optimized
+            });
+        }
+
+        // Error handling
+        window.addEventListener('error', (e) => {
+            // Silent error handling
+        });
     </script>
-
-    <!-- CSS aggiuntivo per nuovi elementi -->
-    <style>
-        .italian-flag-css {
-            display: inline-block;
-            width: 24px;
-            height: 16px;
-            margin-right: 8px;
-            border: 1px solid #ccc;
-            background: linear-gradient(to right, 
-                #009246 0%, #009246 33.33%, 
-                #fff 33.33%, #fff 66.66%, 
-                #ce2b37 66.66%, #ce2b37 100%);
-            border-radius: 2px;
-            vertical-align: middle;
-        }
-
-        .recruitment-status {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(34, 197, 94, 0.15);
-            border: 1px solid #22c55e;
-            border-radius: 25px;
-            padding: 8px 20px;
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: #22c55e;
-        }
-
-        .status-icon {
-            animation: pulse-icon 1.5s infinite;
-        }
-
-        @keyframes pulse-icon {
-            0%, 100% { 
-                transform: scale(1); 
-                opacity: 1; 
-            }
-            50% { 
-                transform: scale(1.2); 
-                opacity: 0.7; 
-            }
-        }
-
-        .recruitment-text {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .recruitment-cta {
-            margin-top: 25px;
-        }
-
-        .cta-button-primary {
-            background: linear-gradient(45deg, #22c55e, #16a34a);
-            color: white;
-            border: none;
-            padding: 15px 35px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 30px;
-            cursor: pointer;
-            margin: 10px 0;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4);
-        }
-
-        .cta-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-top: 10px;
-            opacity: 0.9;
-        }
-
-        .recruitment-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .recruitment-text h3 {
-            color: var(--roman-gold);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .recruitment-text h4 {
-            color: var(--roman-gold);
-            margin: 20px 0 10px 0;
-            font-size: 1.1rem;
-        }
-
-        .recruitment-text ul {
-            margin: 10px 0 20px 20px;
-            line-height: 1.8;
-        }
-
-        .recruitment-text ol {
-            margin: 10px 0 20px 20px;
-            line-height: 1.8;
-        }
-
-        .join-process {
-            background: rgba(255, 215, 0, 0.08);
-            border: 1px solid var(--dark-gold);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 25px 0;
-        }
-
-        .recruitment-banner {
-            background: linear-gradient(135deg, var(--roman-red), var(--bg-dark));
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            margin: 30px 0;
-            border: 1px solid var(--roman-gold);
-        }
-
-        .clan-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .stat-card {
-            background: rgba(255, 215, 0, 0.08);
-            border: 1px solid var(--dark-gold);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--roman-gold);
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            opacity: 0.9;
-        }
-
-        .game-info {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .game-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .preparation-status {
-            background: rgba(255, 215, 0, 0.08);
-            border: 1px solid var(--dark-gold);
-            border-radius: 10px;
-            padding: 25px;
-            margin: 30px 0;
-            text-align: left;
-        }
-
-        .preparation-status h3 {
-            color: var(--roman-gold);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .preparation-status ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-
-        .preparation-status li {
-            margin: 8px 0;
-            line-height: 1.6;
-        }
-
-        .final-cta {
-            background: linear-gradient(135deg, var(--roman-purple), var(--bg-dark));
-            border-radius: 20px;
-            padding: 50px 30px;
-            text-align: center;
-            border: 2px solid var(--roman-gold);
-        }
-
-        .final-cta h2 {
-            margin-bottom: 20px;
-            font-size: 2.2rem;
-        }
-
-        .urgency-text {
-            margin-top: 25px;
-            font-size: 0.9rem;
-            color: #fbbf24;
-            font-style: italic;
-        }
-
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            .clan-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .game-features {
-                grid-template-columns: 1fr;
-            }
-            
-            .final-cta {
-                padding: 30px 20px;
-            }
-            
-            .final-cta h2 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
 </body>
 </html>
